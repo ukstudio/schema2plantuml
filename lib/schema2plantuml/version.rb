@@ -1,3 +1,3 @@
-module Schema2plantuml
+class Schema2plantuml
   VERSION = "0.1.0"
 end

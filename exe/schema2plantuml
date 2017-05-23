@@ -1,3 +1,5 @@
 #!/usr/bin/env ruby
 
 require "schema2plantuml"
+
+Schema2plantuml.new(ARGV.shift).run
