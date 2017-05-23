@@ -9,11 +9,9 @@ module ActiveRecord
     end
 
     def create_table(table_name, _options, &block)
-      puts <<~TABLE
-      object #{table_name} {
-        #{block.call(Table2plantuml.new)}
-      }
-      TABLE
+      puts "object #{table_name} {"
+      block.call(Table2plantuml.new)
+      puts "}"
     end
 
     def add_foreign_key(child_table_name, parent_table_name, _options = {})
@@ -27,7 +25,7 @@ module ActiveRecord
 
   class Table2plantuml
     def method_missing(column_type, column_name, _options = {})
-      "#{column_name} : #{column_type}"
+      puts "#{column_name} : #{column_type}"
     end
   end
 end
