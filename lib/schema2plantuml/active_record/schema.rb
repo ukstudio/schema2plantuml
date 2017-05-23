@@ -17,7 +17,7 @@ module ActiveRecord
     end
 
     def add_foreign_key(child_table_name, parent_table_name, _options = {})
-      puts "#{child_table_name} o-- #{parent_table_name}"
+      puts "#{parent_table_name} --o #{child_table_name}"
     end
 
     def enable_extension(*); end
